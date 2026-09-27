@@ -4,7 +4,7 @@ ComfyQoL = ComfyQoL or {}
 local A = ComfyQoL
 
 A.name = ADDON_NAME or "ComfyQoL"
-A.version = "0.1"
+A.version = "0.2"
 A.buildDate = "28.09.2026"
 A.status = "Beta"
 A.gameVersion = "WoW Forever 1.60.1"
@@ -21,7 +21,6 @@ local defaults = {
 
         autoRepair = true,
         useGuildRepair = false,
-        autoSellJunk = true,
         autoAcceptResurrect = false,
 
         chatArrowKeys = true,
