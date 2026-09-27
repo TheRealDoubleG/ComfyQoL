@@ -1,5 +1,10 @@
 # ComfyQoL Changelog
 
+## 0.2 Beta – 28.09.2026
+- Moved automatic poor-quality item selling to ComfyBag.
+- Kept ComfyQoL focused on cross-system convenience features.
+
+
 ## 0.1 Beta – 28.09.2026
 - Initial modular QoL addon for WoW Forever.
 - Added category-based settings: Automation, Chat, Interface, Camera and Social.
