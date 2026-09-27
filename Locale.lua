@@ -14,7 +14,6 @@ local EN={
     CAT_AUTOMATION="Automation",CAT_CHAT="Chat",CAT_INTERFACE="Interface",CAT_CAMERA="Camera",CAT_SOCIAL="Social",
     AUTO_REPAIR="Automatically repair at merchants",
     GUILD_REPAIR="Use guild funds for repair when available",
-    AUTO_SELL_JUNK="Automatically sell poor-quality items",
     AUTO_RESURRECT="Automatically accept resurrection requests",
     CHAT_ARROWS="Use arrow keys to edit chat text",
     HIDE_ERRORS="Hide red UI error messages",
@@ -22,7 +21,6 @@ local EN={
     BLOCK_DUELS="Automatically decline duel requests",
     CAMERA_MAX_ZOOM="Use custom maximum camera distance",
     CAMERA_ZOOM_FACTOR="Maximum camera zoom factor",
-    SOLD_JUNK="Sold junk",
     REPAIRED_FOR="Repaired for",
     FOREVER_NOTE="Only guarded Forever-compatible or legacy APIs are used. ComfyQoL does not automate combat, movement or protected actions.",
 }
@@ -38,7 +36,6 @@ local DE={
     CAT_AUTOMATION="Automatisierung",CAT_CHAT="Chat",CAT_INTERFACE="Interface",CAT_CAMERA="Kamera",CAT_SOCIAL="Sozial",
     AUTO_REPAIR="Beim Händler automatisch reparieren",
     GUILD_REPAIR="Wenn verfügbar Gildengold für Reparaturen nutzen",
-    AUTO_SELL_JUNK="Graue Gegenstände automatisch verkaufen",
     AUTO_RESURRECT="Wiederbelebungsanfragen automatisch annehmen",
     CHAT_ARROWS="Pfeiltasten zum Bearbeiten von Chattext verwenden",
     HIDE_ERRORS="Rote UI-Fehlermeldungen ausblenden",
@@ -46,7 +43,6 @@ local DE={
     BLOCK_DUELS="Duellanfragen automatisch ablehnen",
     CAMERA_MAX_ZOOM="Eigene maximale Kameradistanz verwenden",
     CAMERA_ZOOM_FACTOR="Maximaler Kamera-Zoomfaktor",
-    SOLD_JUNK="Schrott verkauft",
     REPAIRED_FOR="Repariert für",
     FOREVER_NOTE="Es werden nur abgesicherte Forever-kompatible oder Legacy-APIs genutzt. ComfyQoL automatisiert weder Kampf noch Bewegung oder geschützte Aktionen.",
 }
