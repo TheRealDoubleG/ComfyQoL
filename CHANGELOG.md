@@ -1,5 +1,9 @@
 # ComfyQoL Changelog
 
+## 0.3 Beta – 28.09.2026
+- Profile changes now immediately reapply active feature settings.
+
+
 ## 0.2 Beta – 28.09.2026
 - Moved automatic poor-quality item selling to ComfyBag.
 - Kept ComfyQoL focused on cross-system convenience features.
