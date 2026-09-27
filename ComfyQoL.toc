@@ -1,0 +1,16 @@
+## Interface: 16001
+## Title: ComfyQoL
+## Notes: Modular quality-of-life improvements for chat, automation, interface, camera and general convenience on WoW Forever.
+## Notes-deDE: Modulare Komfortverbesserungen für Chat, Automatisierung, Interface, Kamera und allgemeine Bedienung in WoW Forever.
+## Author: TheRealDoubleG
+## Version: 0.1
+## SavedVariables: ComfyQoLDB
+## X-ComfySuite: true
+## X-ComfyUI: 2
+## IconTexture: Interface\\Icons\\INV_Misc_Gear_01
+
+Locale.lua
+Core.lua
+SharedSettings.lua
+QoL.lua
+Options.lua
