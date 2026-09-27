@@ -18,63 +18,6 @@ local function SetShownSafe(frame,shown)
     if frame.SetShown then frame:SetShown(shown) elseif shown and frame.Show then frame:Show() elseif not shown and frame.Hide then frame:Hide() end
 end
 
-local function UseBagItem(bag,slot)
-    if C_Container and type(C_Container.UseContainerItem)=="function" then
-        local ok=pcall(C_Container.UseContainerItem,bag,slot)
-        return ok
-    elseif type(UseContainerItem)=="function" then
-        local ok=pcall(UseContainerItem,bag,slot)
-        return ok
-    end
-    return false
-end
-
-local function BagSlots(bag)
-    if C_Container and type(C_Container.GetContainerNumSlots)=="function" then
-        local ok,v=pcall(C_Container.GetContainerNumSlots,bag)
-        if ok then return tonumber(v) or 0 end
-    elseif type(GetContainerNumSlots)=="function" then
-        local ok,v=pcall(GetContainerNumSlots,bag)
-        if ok then return tonumber(v) or 0 end
-    end
-    return 0
-end
-
-local function BagLink(bag,slot)
-    if C_Container and type(C_Container.GetContainerItemLink)=="function" then
-        local ok,v=pcall(C_Container.GetContainerItemLink,bag,slot)
-        if ok then return v end
-    elseif type(GetContainerItemLink)=="function" then
-        local ok,v=pcall(GetContainerItemLink,bag,slot)
-        if ok then return v end
-    end
-end
-
-function A:SellJunk()
-    if not self.db or not self.db.enabled or not self.db.qol.autoSellJunk then return end
-    local before=type(GetMoney)=="function" and tonumber(GetMoney()) or nil
-    local sold=0
-
-    for bag=0,4 do
-        local slots=BagSlots(bag)
-        for slot=1,slots do
-            local link=BagLink(bag,slot)
-            if link and type(GetItemInfo)=="function" then
-                local ok,_,_,quality,_,_,_,_,_,_,sellPrice=pcall(GetItemInfo,link)
-                if ok and tonumber(quality)==0 and (tonumber(sellPrice) or 0)>0 then
-                    if UseBagItem(bag,slot) then sold=sold+1 end
-                end
-            end
-        end
-    end
-
-    if sold>0 and before and type(GetMoney)=="function" then
-        local after=tonumber(GetMoney()) or before
-        local gain=math.max(0,after-before)
-        if gain>0 then self:Print(self:T("SOLD_JUNK")..": "..MoneyText(gain)) end
-    end
-end
-
 function A:Repair()
     if not self.db or not self.db.enabled or not self.db.qol.autoRepair then return end
     if type(CanMerchantRepair)~="function" or not CanMerchantRepair() then return end
@@ -163,7 +106,6 @@ function A:HandleEvent(event,...)
     if not self.db or not self.db.enabled then return end
     if event=="MERCHANT_SHOW" then
         self:Repair()
-        self:SellJunk()
     elseif event=="RESURRECT_REQUEST" and self.db.qol.autoAcceptResurrect then
         if type(AcceptResurrect)=="function" then pcall(AcceptResurrect) end
     elseif event=="DUEL_REQUESTED" and self.db.qol.blockDuels then
@@ -245,8 +187,7 @@ function A:BuildGeneralOptions(page,ui)
     local p=self.qolCategoryPages.automation
     ui.CreateCheck(p,self:T("AUTO_REPAIR"),10,-15,function() return A.db.qol.autoRepair end,function(v) A.db.qol.autoRepair=v end)
     ui.CreateCheck(p,self:T("GUILD_REPAIR"),35,-50,function() return A.db.qol.useGuildRepair end,function(v) A.db.qol.useGuildRepair=v end)
-    ui.CreateCheck(p,self:T("AUTO_SELL_JUNK"),10,-85,function() return A.db.qol.autoSellJunk end,function(v) A.db.qol.autoSellJunk=v end)
-    ui.CreateCheck(p,self:T("AUTO_RESURRECT"),10,-120,function() return A.db.qol.autoAcceptResurrect end,function(v) A.db.qol.autoAcceptResurrect=v end)
+    ui.CreateCheck(p,self:T("AUTO_RESURRECT"),10,-85,function() return A.db.qol.autoAcceptResurrect end,function(v) A.db.qol.autoAcceptResurrect=v end)
 
     p=self.qolCategoryPages.chat
     ui.CreateCheck(p,self:T("CHAT_ARROWS"),10,-15,function() return A.db.qol.chatArrowKeys end,function(v) A.db.qol.chatArrowKeys=v; A:ApplyChatArrows() end)
