@@ -1,18 +1,22 @@
 # ComfyQoL
 
-**Version 0.1 – Beta**  
+**Version 0.2 – Beta**  
 **Target: World of Warcraft: Forever 1.60.1 / Interface 16001**
 
 Modular quality-of-life improvements for chat, automation, interface, camera and general convenience on WoW Forever.
 
 ComfyQoL deliberately keeps unrelated convenience features out of ComfyHub. The settings window is category-based so each module can be enabled independently.
 
+## 0.2 Beta
+
+- Moved automatic junk selling to ComfyBag, where inventory-specific automation belongs.
+- Kept ComfyQoL focused on general automation, chat, interface, camera and social convenience.
+
 ## 0.1 Beta
 
 ### Automation
 - automatic merchant repair
 - optional guild-fund repair when available
-- automatic selling of poor-quality items
 - optional automatic resurrection acceptance
 
 ### Chat
