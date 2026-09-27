@@ -118,6 +118,10 @@ function A:HandleEvent(event,...)
     end
 end
 
+function A:RefreshFeature()
+    self:ApplyAll()
+end
+
 function A:InitializeFeature()
     local f=CreateFrame("Frame")
     self.eventFrame=f
