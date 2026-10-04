@@ -4,8 +4,8 @@ ComfyQoL = ComfyQoL or {}
 local A = ComfyQoL
 
 A.name = ADDON_NAME or "ComfyQoL"
-A.version = "0.4"
-A.buildDate = "28.09.2026"
+A.version = "0.6"
+A.buildDate = "04.10.2026"
 A.status = "Beta"
 A.gameVersion = "WoW Forever 1.60.1"
 A.targetBuild = "70009"
@@ -24,14 +24,22 @@ local defaults = {
         autoAcceptResurrect = false,
 
         chatArrowKeys = true,
+        chatTimestamps = false,
 
         hideErrorText = false,
         hideZoneText = false,
+        fadeObjectivesInCombat = false,
+        objectiveCombatAlpha = 35,
+        hideTalkingHead = false,
 
         blockDuels = false,
+        blockGuildInvites = false,
+        blockPartyInvites = false,
 
         cameraMaxZoom = false,
         cameraZoomFactor = 2.6,
+        cameraCustomZoomSpeed = false,
+        cameraZoomSpeed = 20,
     },
     optionsWindow = {point="CENTER",relativePoint="CENTER",x=0,y=20},
     ui = {windowLocked=false,windowOpacity=100,showWindowBorder=true,backgroundAlpha=92},
