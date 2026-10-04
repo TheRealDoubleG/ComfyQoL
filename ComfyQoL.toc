@@ -3,7 +3,7 @@
 ## Notes: Modular quality-of-life improvements for chat, automation, interface, camera and general convenience on WoW Forever.
 ## Notes-deDE: Modulare Komfortverbesserungen für Chat, Automatisierung, Interface, Kamera und allgemeine Bedienung in WoW Forever.
 ## Author: TheRealDoubleG
-## Version: 0.5
+## Version: 0.6
 ## SavedVariables: ComfyQoLDB
 ## X-ComfySuite: true
 ## X-ComfyUI: 2
@@ -15,3 +15,4 @@ SharedSettings.lua
 QoL.lua
 Options.lua
 UIPolish.lua
+ComfortPlus.lua
